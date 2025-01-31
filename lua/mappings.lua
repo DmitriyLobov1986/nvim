@@ -1,5 +1,4 @@
 require "nvchad.mappings"
-require "configs.hop.mappings"
 
 -- add yours here
 
@@ -19,7 +18,7 @@ map({ "n" }, "<leader>xx", function()
 end)
 
 -- terminal
-map({ "n" }, "<A-x>", function()
+map({ "n", "t" }, "<A-x>", function()
   require("nvchad.term").toggle { pos = "sp", size = 0.3 }
 end, { desc = "terminal toggleable horizontal term" })
 
@@ -38,3 +37,9 @@ map("v", "<A-j>", ":MoveBlock(1)<CR>", opts)
 map("v", "<A-k>", ":MoveBlock(-1)<CR>", opts)
 map("v", "<A-h>", ":MoveHBlock(-1)<CR>", opts)
 map("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
+
+-- hop
+require "configs.hop.mappings"
+
+-- dap
+require "configs.dap.mappings"

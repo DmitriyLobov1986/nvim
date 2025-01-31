@@ -52,4 +52,21 @@ return {
     lazy = true,
     opts = require "configs.nvim-tree",
   },
+
+  -- dap
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require "configs.dap.configuration"
+      require "dapui"
+    end,
+  },
+  { "rcarriga/nvim-dap-ui", opts = {}, dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
+
+  -- picker
+  {
+    "uga-rosa/ccc.nvim",
+    lazy = false,
+    opts = {},
+  },
 }
