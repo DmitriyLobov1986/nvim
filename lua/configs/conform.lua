@@ -1,9 +1,11 @@
 local options = {
   formatters_by_ft = {
-    lua = { "stylua" },
-    typescript = { "prettier" },
-    css = { "prettier" },
-    html = { "prettier" },
+    lua = { 'stylua' },
+    typescript = { 'prettier' },
+    javascript = { 'prettier' },
+    json = { 'prettier' },
+    css = { 'prettier' },
+    html = { 'prettier' },
   },
 
   format_on_save = {

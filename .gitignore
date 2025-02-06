@@ -1,1 +1,7 @@
-/test*
+node_modules/*
+.*
+*.ts
+*.js
+*.mjs
+package.json
+package-lock.json
