@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "chadracula",
+  theme = "tokyonight",
 
   hl_override = {
     NvDashAscii = { fg = "yellow" },
