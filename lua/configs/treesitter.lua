@@ -1,12 +1,13 @@
 local opts = {
   ensure_installed = {
-    "vim",
-    "lua",
-    "vimdoc",
-    "html",
-    "css",
-    "javascript",
-    "typescript",
+    'vim',
+    'lua',
+    'vimdoc',
+    'html',
+    'css',
+    'javascript',
+    'typescript',
+    'json',
   },
 }
 

@@ -14,10 +14,10 @@ return {
     end,
   },
 
-  {
-    'williamboman/mason.nvim',
-    opts = require 'configs.mason',
-  },
+  -- {
+  --   'williamboman/mason.nvim',
+  --   opts = require 'configs.mason',
+  -- },
 
   {
     'nvim-treesitter/nvim-treesitter',
