@@ -22,6 +22,10 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     -- enabled = false,
+    init = function()
+      vim.cmd 'hi @comment gui=NONE'
+      print '42'
+    end,
     opts = require 'configs.treesitter',
   },
 
@@ -53,7 +57,11 @@ return {
     opts = require 'configs.nvim-tree',
   },
 
-  { 'rcarriga/nvim-dap-ui', opts = {}, dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' } },
+  {
+    'rcarriga/nvim-dap-ui',
+    opts = {},
+    dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
+  },
 
   -- picker
   {

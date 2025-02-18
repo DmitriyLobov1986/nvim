@@ -10,8 +10,8 @@ M.base46 = {
 
   hl_override = {
     NvDashAscii = { fg = 'yellow' },
-    Comment = { italic = true },
-    ['@comment'] = { italic = true },
+    Comment = { italic = false, bg = 'NONE' },
+    ['@comment'] = { italic = false, bg = 'NONE' },
   },
 }
 
