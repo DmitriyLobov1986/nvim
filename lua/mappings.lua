@@ -17,8 +17,18 @@ map('n', '<leader>xx', function()
 end)
 
 -- windows
-map('n', '<C-S-Left>', '<cmd> vertical resize +1<cr>', { desc = 'increase width' })
-map('n', '<C-S-Right>', '<cmd> vertical resize -1<cr>', { desc = 'deccrease width' })
+map(
+  'n',
+  '<C-S-Left>',
+  '<cmd> vertical resize +1<cr>',
+  { desc = 'increase width' }
+)
+map(
+  'n',
+  '<C-S-Right>',
+  '<cmd> vertical resize -1<cr>',
+  { desc = 'deccrease width' }
+)
 map('n', '<C-S-Up>', '<cmd> resize +1<cr>', { desc = 'deccrease height' })
 map('n', '<C-S-Down>', '<cmd> resize -1<cr>', { desc = 'deccrease height' })
 
@@ -44,7 +54,10 @@ map('v', '<A-h>', ':MoveHBlock(-1)<CR>', opts)
 map('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)
 
 -- hop
-require 'configs.hop.mappings'
+require 'configs.hop_config.mappings'
 
 -- dap
 require 'configs.dap.mappings'
+
+-- telescope
+require 'configs.telescope_config.mappings'

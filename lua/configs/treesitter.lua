@@ -8,6 +8,7 @@ local opts = {
     'javascript',
     'typescript',
     'json',
+    'jsonc',
   },
 }
 

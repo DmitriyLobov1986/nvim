@@ -48,19 +48,13 @@ return {
     branch = 'v2',
     lazy = true,
     event = 'VimEnter',
-    opts = require 'configs.hop',
+    opts = require 'configs.hop_config',
   },
 
   {
     'nvim-tree/nvim-tree.lua',
     lazy = true,
     opts = require 'configs.nvim-tree',
-  },
-
-  {
-    'rcarriga/nvim-dap-ui',
-    opts = {},
-    dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
   },
 
   -- picker
