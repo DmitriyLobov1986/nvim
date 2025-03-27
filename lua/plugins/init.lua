@@ -24,7 +24,6 @@ return {
     -- enabled = false,
     init = function()
       vim.cmd 'hi @comment gui=NONE'
-      print '42'
     end,
     opts = require 'configs.treesitter',
   },
@@ -32,14 +31,14 @@ return {
   {
     'stevearc/dressing.nvim',
     lazy = true,
-    event = 'VimEnter',
+    -- event = 'VimEnter',
+    event = 'VeryLazy',
     opts = {},
   },
 
   {
     'fedepujol/move.nvim',
-    lazy = true,
-    event = 'VimEnter',
+    event = 'VeryLazy',
     opts = require 'configs.move',
   },
 
@@ -47,7 +46,7 @@ return {
     'hadronized/hop.nvim',
     branch = 'v2',
     lazy = true,
-    event = 'VimEnter',
+    event = 'VeryLazy',
     opts = require 'configs.hop_config',
   },
 
@@ -60,7 +59,8 @@ return {
   -- picker
   {
     'uga-rosa/ccc.nvim',
-    lazy = false,
+    -- event = 'VeryLazy',
+    cmd = 'CccPick',
     opts = {},
   },
 
@@ -78,5 +78,12 @@ return {
   },
 
   -- git
-  { 'sindrets/diffview.nvim', lazy = true, event = 'VeryLazy', opts = {} },
+  {
+    'sindrets/diffview.nvim',
+    -- event = 'VeryLazy',
+    opts = {},
+    keys = { -- Example mapping to toggle outline
+      { '<leader>gd', '<cmd>DiffviewOpen<CR>', desc = 'Open Diff view' },
+    },
+  },
 }

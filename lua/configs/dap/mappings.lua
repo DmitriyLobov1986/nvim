@@ -36,6 +36,10 @@ map('n', '<leader>ds', function()
   require('dapui').float_element 'scopes'
 end, { desc = 'float scopes' })
 
+map('n', '<leader>dc', function()
+  require('dapui').float_element 'console'
+end, { desc = 'float console' })
+
 map('n', '<leader>de', function()
   require('dapui').eval()
 end, { desc = 'evaluate expression' })

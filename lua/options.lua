@@ -15,17 +15,29 @@ o.cursorlineopt = 'both' -- to enable cursorline!
 o.relativenumber = true
 
 -- clipboard
-o.clipboard = ''
+-- o.clipboard = 'unnamedplus'
 
 g.clipboard = {
-  name = 'OSC 52',
+  name = 'tmuxClipboard',
   copy = {
-    ['+'] = require('vim.ui.clipboard.osc52').copy '+',
-    ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+    ['+'] = { 'tmux', 'load-buffer', '-' },
+    ['*'] = { 'tmux', 'load-buffer', '-' },
   },
   paste = {
-    ['+'] = require('vim.ui.clipboard.osc52').paste '+',
-    ['*'] = require('vim.ui.clipboard.osc52').paste '*',
+    ['+'] = { 'tmux', 'save-buffer', '-' },
+    ['*'] = { 'tmux', 'save-buffer', '-' },
   },
-  cache_enabled = 0,
+  cache_enabled = 1,
 }
+-- g.clipboard = {
+--   name = 'OSC 52',
+--   copy = {
+--     ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+--     ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+--   },
+--   paste = {
+--     ['+'] = require('vim.ui.clipboard.osc52').paste '+',
+--     ['*'] = require('vim.ui.clipboard.osc52').paste '*',
+--   },
+--   cache_enabled = 0,
+-- }

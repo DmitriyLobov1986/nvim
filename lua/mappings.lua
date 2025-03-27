@@ -5,9 +5,9 @@ local map = vim.keymap.set
 
 map('n', ';', ':', { desc = 'CMD enter command mode' })
 
-map({ 'i', 'v' }, '<A-\\>', '<ESC>', { desc = 'toggle normal mode' })
+map({ 'i', 'v' }, 'zz', '<ESC>', { desc = 'toggle normal mode' })
 
-map('n', '<A-\\>', 'i', { desc = 'toggle insert mode' })
+-- map('n', '<A-\\>', 'i', { desc = 'toggle insert mode' })
 
 map({ 'n', 'i', 'v' }, '<C-s>', '<cmd> w <cr>', { desc = 'save file' })
 
@@ -61,3 +61,21 @@ require 'configs.dap.mappings'
 
 -- telescope
 require 'configs.telescope_config.mappings'
+
+-- lsp
+local wk = require 'which-key'
+wk.add {
+  'gh',
+  function()
+    vim.lsp.buf.hover()
+  end,
+  desc = 'LSP buffer hover',
+}
+
+wk.add {
+  '<leader>cr',
+  function()
+    vim.lsp.buf.rename()
+  end,
+  desc = 'LSP NvRenamer',
+}

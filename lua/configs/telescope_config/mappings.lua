@@ -1,4 +1,12 @@
 local map = vim.keymap.set
+local unmap = vim.keymap.del
+
+unmap('n', '<leader>gt')
+unmap('n', '<leader>cm')
+
+map('n', '<leader>gs', ':Telescope git_status <CR>', { desc = 'git status' })
+
+map('n', '<leader>gc', ':Telescope git_commits <CR>', { desc = 'git commits' })
 
 map(
   'n',

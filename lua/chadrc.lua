@@ -6,12 +6,13 @@
 local M = {}
 
 M.base46 = {
-  theme = 'tokyonight',
+  theme = 'nord',
 
   hl_override = {
     NvDashAscii = { fg = 'yellow' },
     Comment = { italic = false, bg = 'NONE' },
     ['@comment'] = { italic = false, bg = 'NONE' },
+    Visual = { italic = false, bg = '#f9e79f', fg = 'red' },
   },
 }
 
@@ -25,6 +26,7 @@ M.mason = {
   cmd = true,
   pkgs = {
     'js-debug-adapter',
+    -- 'chrome-debug-adapter',
   },
 }
 
