@@ -6,7 +6,7 @@ return {
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
     opts = {
-      experimental = {
+      expemimental = {
         ghost_text = true,
       },
       -- sources = {

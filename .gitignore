@@ -1,6 +1,10 @@
+lua-5.4.7
 node_modules
-# .vscode
+# lua-*
+.vscode
+.session
 # .*
+*.lua
 *.ts
 *.js
 *.mjs

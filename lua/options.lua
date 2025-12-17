@@ -3,7 +3,6 @@ require 'nvchad.options'
 -- add yours here!
 
 local o = vim.o
-local g = vim.g
 
 -- folding
 o.foldmethod = 'expr'
@@ -18,6 +17,10 @@ o.relativenumber = true
 o.clipboard = 'unnamedplus'
 
 o.diffopt = o.diffopt .. ',iwhiteall'
+
+-- filetypes
+vim.filetype.add { extension = { bsl = 'bsl' } }
+vim.filetype.add { extension = { yml = 'yaml.docker-compose' } }
 
 -- g.clipboard = {
 --   name = 'tmuxClipboard',
