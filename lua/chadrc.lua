@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = 'nord',
+  theme = 'tokyonight',
 
   hl_override = {
     NvDashAscii = { fg = 'yellow' },
@@ -28,6 +28,10 @@ M.mason = {
     'js-debug-adapter',
     -- 'chrome-debug-adapter',
   },
+}
+
+M.lsp = {
+  signature = false,
 }
 
 M.term = {

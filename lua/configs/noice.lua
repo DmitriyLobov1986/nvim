@@ -9,6 +9,11 @@ local opts = {
     -- view_history = 'notify', -- view for :messages
     -- view_search = false, -- view for search count messages. Set to `false` to disable
   },
+  lsp = {
+    signature = {
+      enabled = false,
+    },
+  },
 }
 
 return opts

@@ -40,7 +40,7 @@ map('n', '<leader>dc', function()
   require('dapui').float_element 'console'
 end, { desc = 'float console' })
 
-map('n', '<leader>de', function()
+map({ 'n', 'v' }, '<leader>de', function()
   require('dapui').eval()
 end, { desc = 'evaluate expression' })
 
@@ -49,18 +49,18 @@ vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#993939' })
 vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#4d8066' })
 -- vim.api.nvim_set_hl(namespace, "DapLogPoint", { fg = "#eaeaeb", bg = "#ffffff" })
 --
-vim.fn.sign_define('DapBreakpoint', {
-  text = '🔴',
-  texthl = 'DapBreakpoint',
-  linehl = 'DapBreakpoint',
-  numhl = 'DapBreakpoint',
-})
-vim.fn.sign_define('DapStopped', {
-  text = '',
-  texthl = 'DapStopped',
-  linehl = 'DapStopped',
-  numhl = 'DapStopped',
-})
+-- vim.fn.sign_define('DapBreakpoint', {
+--   text = '🔴',
+--   texthl = 'DapBreakpoint',
+--   linehl = 'DapBreakpoint',
+--   numhl = 'DapBreakpoint',
+-- })
+-- vim.fn.sign_define('DapStopped', {
+--   text = '',
+--   texthl = 'DapStopped',
+--   linehl = 'DapStopped',
+--   numhl = 'DapStopped',
+-- })
 -- vim.fn.sign_define(
 --   "DapBreakpointCondition",
 --   { text = "ﳁ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
