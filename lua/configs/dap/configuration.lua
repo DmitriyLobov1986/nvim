@@ -26,26 +26,22 @@ dap.adapters.bashdb = {
   name = 'bashdb',
 }
 
-dap.configurations.sh = {
-  {
-    type = 'bashdb',
-    request = 'launch',
-    name = 'Debug bash files',
-    showDebugOutput = true,
-    pathBashdb = vim.fn.stdpath 'data'
-      .. '/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb',
-    pathBashdbLib = vim.fn.stdpath 'data'
-      .. '/mason/packages/bash-debug-adapter/extension/bashdb_dir',
-    trace = true,
-    file = '${file}',
-    program = '${file}',
-    cwd = '${workspaceFolder}',
-    pathCat = 'cat',
-    pathBash = '/bin/bash',
-    pathMkfifo = 'mkfifo',
-    pathPkill = 'pkill',
-    args = {},
-    env = {},
-    terminalKind = 'integrated',
+-- lua
+local adpPath =
+  '/home/user001/.local/share/nvim/mason/packages/local-lua-debugger-vscode/'
+dap.adapters['local-lua'] = {
+  type = 'executable',
+  command = 'node',
+  args = {
+    adpPath .. 'extension/debugAdapter.js',
   },
+  enrich_config = function(config, on_config)
+    if not config['extensionPath'] then
+      local c = vim.deepcopy(config)
+      c.extensionPath = adpPath
+      on_config(c)
+    else
+      on_config(config)
+    end
+  end,
 }

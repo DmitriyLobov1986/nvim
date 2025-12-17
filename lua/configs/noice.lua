@@ -6,8 +6,13 @@ local opts = {
     view = 'mini', -- default view for messages
     view_error = 'notify', -- view for errors
     view_warn = 'notify', -- view for warnings
-    -- view_history = 'notify', -- view for :messages
+    view_history = 'messages', -- view for :messages
     -- view_search = false, -- view for search count messages. Set to `false` to disable
+  },
+  lsp = {
+    signature = {
+      enabled = false,
+    },
   },
 }
 

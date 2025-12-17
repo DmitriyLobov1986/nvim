@@ -12,12 +12,12 @@ map(
   'n',
   '<leader>fn',
   ':Telescope noice <CR>',
-  { desc = 'use noice extension' }
+  { desc = 'show noice messages' }
 )
 
 map(
   'n',
   '<leader>fd',
   ':Telescope diagnostics <CR>',
-  { desc = 'show messages' }
+  { desc = 'show diagnostics' }
 )

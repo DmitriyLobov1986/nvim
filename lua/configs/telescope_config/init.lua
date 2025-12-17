@@ -1,5 +1,3 @@
--- require('telescope').load_extension 'noise'
-
 local opts = {
 
   defaults = {
@@ -7,6 +5,17 @@ local opts = {
     layout_config = {
       height = 0.95,
       horizontal = { prompt_position = 'bottom' },
+    },
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--no-ignore',
+      '--hidden',
     },
   },
 }

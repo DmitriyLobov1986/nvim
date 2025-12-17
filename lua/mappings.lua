@@ -12,9 +12,9 @@ map({ 'i', 'v' }, 'zz', '<ESC>', { desc = 'toggle normal mode' })
 map({ 'n', 'i', 'v' }, '<C-s>', '<cmd> w <cr>', { desc = 'save file' })
 
 -- close all buffers
-map('n', '<leader>xx', function()
+map('n', '<leader>X', function()
   require('nvchad.tabufline').closeAllBufs()
-end)
+end, { desc = 'close all buffers' })
 
 -- windows
 map(
@@ -31,6 +31,9 @@ map(
 )
 map('n', '<C-S-Up>', '<cmd> resize +1<cr>', { desc = 'deccrease height' })
 map('n', '<C-S-Down>', '<cmd> resize -1<cr>', { desc = 'deccrease height' })
+
+-- tabs
+map('n', '<leader>tq', '<cmd> tabclose! <cr>', { desc = 'close current tab' })
 
 -- terminal
 map({ 'n', 't' }, '<A-x>', function()
@@ -79,3 +82,8 @@ wk.add {
   end,
   desc = 'LSP NvRenamer',
 }
+
+-- -- persistence
+-- map('n', '<leader>sr', function()
+--   require('persistence').load()
+-- end, { desc = 'restore last session' })
