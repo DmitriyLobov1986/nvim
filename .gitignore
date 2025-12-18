@@ -4,9 +4,9 @@ node_modules
 .vscode
 .session
 # .*
-*.lua
-*.ts
-*.js
-*.mjs
+/*.lua
+/*.ts
+/*.js
+/*.mjs
 package.json
 package-lock.json
