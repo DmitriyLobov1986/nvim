@@ -22,6 +22,10 @@ o.diffopt = o.diffopt .. ',iwhiteall'
 vim.filetype.add { extension = { bsl = 'bsl' } }
 vim.filetype.add { extension = { yml = 'yaml.docker-compose' } }
 
+-- cursor
+o.guicursor =
+'n-v-c-sm:block,i-ci-ve:block-blinkon100-blinkoff100,r-cr-o:hor20,t:block-blinkon500-blinkoff500-TermCursor'
+
 -- g.clipboard = {
 --   name = 'tmuxClipboard',
 --   copy = {

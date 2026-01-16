@@ -5,66 +5,15 @@ vim.lsp.config('bsl_ls', {
   cmd = { 'bsl-language-server' }
 })
 
-
 vim.lsp.enable('bsl_ls')
 vim.lsp.enable('ts_ls')
+vim.lsp.enable('jsonls')
 
--- local lspconfig = require 'lspconfig'
---
--- -- EXAMPLE
--- local servers = { 'html', 'cssls' }
--- local nvlsp = require 'nvchad.configs.lspconfig'
---
--- -- lsps with default config
--- for _, lsp in ipairs(servers) do
---   lspconfig[lsp].setup {
---     on_attach = nvlsp.on_attach,
---     on_init = nvlsp.on_init,
---     capabilities = nvlsp.capabilities,
---   }
--- end
---
--- -- typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
---
--- -- docker
--- lspconfig.dockerls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
---
---   -- docker compose
--- lspconfig.docker_compose_language_service.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
--- }
---
--- -- bash
--- lspconfig.bashls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
---
--- -- bsl
--- lspconfig.bsl_ls.setup {
---   cmd = {
---     'bsl-language-server',
---     'lsp',
---   },
---   cmd_cwd = vim.fn.stdpath 'data' .. '/mason/packages/bsl-language-server/',
---   root_dir = function(_, bufnr)
---     return vim.fs.root(bufnr, function()
---       return true
---     end)
---   end,
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
+-- force jsonc
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = vim.api.nvim_create_augroup('JsonToJsoncl', { clear = true }),
+  pattern = '*.json',
+  callback = function()
+    vim.opt.filetype = 'jsonc'
+  end
+})
