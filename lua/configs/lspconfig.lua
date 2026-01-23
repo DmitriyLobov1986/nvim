@@ -1,10 +1,6 @@
 -- load defaults i.e lua_lsp
 require('nvchad.configs.lspconfig').defaults()
 
-vim.lsp.config('bsl_ls', {
-  cmd = { 'bsl-language-server' }
-})
-
 vim.lsp.enable('bsl_ls')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('jsonls')
