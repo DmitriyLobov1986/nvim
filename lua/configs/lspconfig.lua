@@ -1,6 +1,8 @@
 -- load defaults i.e lua_lsp
 require('nvchad.configs.lspconfig').defaults()
 
+
+vim.lsp.enable('dockerls')
 vim.lsp.enable('bsl_ls')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('jsonls')

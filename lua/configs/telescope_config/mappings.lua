@@ -21,3 +21,8 @@ map(
   ':Telescope diagnostics <CR>',
   { desc = 'show diagnostics' }
 )
+
+map('n', '<leader>fk',
+  ':Telescope keymaps <CR>',
+  { desc = 'show keymaps help' }
+)

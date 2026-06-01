@@ -12,10 +12,5 @@ return {
     opts = require 'configs.dap.dapui_config',
     dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
   },
-  -- {
-  --   'mxsdev/nvim-dap-vscode-js',
-  --   opts = {
-  --     debugger_path = '$HOME/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js',
-  --   },
-  -- },
+  { 'theHamsta/nvim-dap-virtual-text', lazy = false, config = true }
 }

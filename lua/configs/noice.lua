@@ -1,4 +1,8 @@
 local opts = {
+  presets = {
+    bottom_search = true,
+    command_palette = true
+  },
   messages = {
     -- NOTE: If you enable messages, then the cmdline is enabled automatically.
     -- This is a current Neovim limitation.
@@ -23,6 +27,7 @@ local opts = {
       enabled = false,
     },
   },
+  views = { notify = { timeout = 1500 } }
 }
 
 return opts

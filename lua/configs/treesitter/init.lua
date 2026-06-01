@@ -1,3 +1,16 @@
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+
+parser_config.bsl = {
+  install_info = {
+    url = 'https://github.com/alkoleft/tree-sitter-bsl', -- URL of the grammar
+    files = { 'grammars/bsl/src/parser.c' },
+    branch = 'develop',                                  -- Use the develop branch for latest fixes
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
+  },
+  filetype = 'bsl', -- Map this parser to the 'bsl' filetype
+}
+
 local opts = {
   ensure_installed = {
     'vim',
@@ -10,6 +23,9 @@ local opts = {
     'json',
     'jsonc',
   },
+
+  highlight = { enable = true },
+
   textobjects = {
     select = {
       enable = true,
@@ -30,7 +46,7 @@ local opts = {
       },
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
+        ['@function.outer'] = 'V',  -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
       include_surrounding_whitespace = true,

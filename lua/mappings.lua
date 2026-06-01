@@ -5,7 +5,7 @@ local map = vim.keymap.set
 
 map('n', ';', ':', { desc = 'CMD enter command mode' })
 
-map({ 'i', 'v' }, 'zz', '<ESC>', { desc = 'toggle normal mode' })
+map({ 'i', 'v' }, 'jj', '<ESC>', { desc = 'toggle normal mode' })
 
 -- map('n', '<A-\\>', 'i', { desc = 'toggle insert mode' })
 

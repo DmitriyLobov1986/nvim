@@ -45,16 +45,16 @@ map({ 'n', 'v' }, '<leader>de', function()
 end, { desc = 'evaluate expression' })
 
 -- SIGNS
-vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#993939' })
+vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#993939', bg = 'lightblue' })
 vim.api.nvim_set_hl(0, 'DapStopped', { fg = '#4d8066' })
 -- vim.api.nvim_set_hl(namespace, "DapLogPoint", { fg = "#eaeaeb", bg = "#ffffff" })
 --
--- vim.fn.sign_define('DapBreakpoint', {
---   text = '🔴',
---   texthl = 'DapBreakpoint',
---   linehl = 'DapBreakpoint',
---   numhl = 'DapBreakpoint',
--- })
+vim.fn.sign_define('DapBreakpoint', {
+  text = '🔴',
+  texthl = 'DapBreakpoint',
+  linehl = 'DapBreakpoint',
+  numhl = 'DapBreakpoint',
+})
 -- vim.fn.sign_define('DapStopped', {
 --   text = '',
 --   texthl = 'DapStopped',

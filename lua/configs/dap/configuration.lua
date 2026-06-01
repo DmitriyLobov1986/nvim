@@ -1,11 +1,11 @@
 local dap = require 'dap'
-require('dap.ext.vscode').load_launchjs(nil, {})
+-- require('dap.ext.vscode').load_launchjs(nil, {})
 local types = { 'pwa-node', 'pwa-chrome' }
 
 for _, type in ipairs(types) do
   dap.adapters[type] = {
     type = 'server',
-    host = '127.0.0.1',
+    host = '::1',
     port = '${port}',
     executable = {
       command = 'js-debug-adapter',
@@ -23,13 +23,13 @@ end
 dap.adapters.bashdb = {
   type = 'executable',
   command = vim.fn.stdpath 'data'
-    .. '/mason/packages/bash-debug-adapter/bash-debug-adapter',
+      .. '/mason/packages/bash-debug-adapter/bash-debug-adapter',
   name = 'bashdb',
 }
 
 -- lua
 local adpPath =
-  '/home/user001/.local/share/nvim/mason/packages/local-lua-debugger-vscode/'
+'/home/user001/.local/share/nvim/mason/packages/local-lua-debugger-vscode/'
 dap.adapters['local-lua'] = {
   type = 'executable',
   command = 'node',

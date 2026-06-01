@@ -22,10 +22,14 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     -- enabled = false,
+    dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
     init = function()
       vim.cmd 'hi @comment gui=NONE'
     end,
-    opts = require 'configs.treesitter',
+    config = function()
+      local opts = require 'configs.treesitter'
+      require('nvim-treesitter.configs').setup(opts)
+    end
   },
 
   {
@@ -43,8 +47,8 @@ return {
   },
 
   {
-    'hadronized/hop.nvim',
-    branch = 'v2',
+    'smoka7/hop.nvim',
+    -- branch = 'v2',
     lazy = true,
     event = 'VeryLazy',
     opts = require 'configs.hop_config',
